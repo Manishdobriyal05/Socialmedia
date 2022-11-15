@@ -1,7 +1,7 @@
-<h1>welcome to my page</h1>
+<h1>Welcome to my page</h1>
 
 <% if logged_in? %>
-    <h1>You are Logged In, <%= current_user.username %></h1>
+    <h3>You are Logged In, <%= current_user.username %></h3>
 <%end%>
 
 <%= button_to "Login", '/login', method: :get%><br>
