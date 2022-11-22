@@ -1,9 +1,30 @@
-<h1>Welcome to my page</h1>
-
-<% if logged_in? %>
-    <h3>You are Logged In, <%= current_user.username %></h3>
-<%end%>
-
-<%= button_to "Login", '/login', method: :get%><br>
-<%= button_to "Sign Up", '/users/new', method: :get%>
-
+<h1>Welcome to Socialnetwork</h1>
+<h3><strong><u>All Signed-up users List</u></strong></h3>
+<div class="left">
+    <% if logged_in? %>
+    <h3>You are Signed-up, <%= current_user.username %></h3>
+    <%end%>
+    <%= button_to "Login", '/login', method: :get, class: "btn btn-primary" %>
+    <strong><u>Already a member</strong></u>
+</div>
+<div class="center">
+    <%= link_to 'Create New User', new_user_path, class: "btn btn-primary" %>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- @users.each is not working, so use User.all -->
+        <% User.all.each do |user| %>
+        <tr>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td><%= link_to 'Delete', user_path(user), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "mt-2 btn btn-primary" %></td>
+            <% end %>
+        </tr>
+    </tbody>
+</table>

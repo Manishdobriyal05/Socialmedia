@@ -14,12 +14,20 @@ gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
+gem 'pg', '~> 1.4', '>= 1.4.4'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
+
+# CableReady helps you create great real-time user experiences 
+# by making it simple to trigger client-side DOM changes from server-side Ruby.
+gem 'cable_ready', '~> 4.5'
+
+# Server-rendered HTML, delivered in milliseconds over the wire via Websockets.
+gem 'stimulus_reflex', '~> 3.4', '>= 3.4.1'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -44,6 +52,10 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'bootstrap', '~> 5.2.2'
+
+gem 'jquery-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

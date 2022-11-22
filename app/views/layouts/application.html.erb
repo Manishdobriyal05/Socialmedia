@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsdemoProject</title>
+    <title>Virtualworld</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <style type="text/css">
+      .center {
+        margin-left: auto;
+        margin-right: auto;
+
+      }
+       th, td {
+        width:150px;
+        text-align:center;
+        padding:5px
+             
+      }
+      .profile {
+        color: blue;    
+        text-align: left;
+      }
+      .left{
+        text-align: left;
+      }
+      
+    </style>
   </head>
 
-  <body bgcolor="cyan" align="center">
+  <body align="center">
     <%= yield %>
   </body>
 </html>

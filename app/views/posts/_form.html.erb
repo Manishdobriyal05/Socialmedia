@@ -1,0 +1,43 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Title, style: "display: block" %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :images, accept: 'image/png, image/gif, image/jpeg' %> 
+    <%#= form.text_area :content, placeholder: "Enter article content here", size: "50x10" %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body, placeholder: "Enter the message", class: "Form-control", rows: 3 %>
+  </div>
+
+  <div>
+    <%= form.label :likes_count, style: "display: block" %>
+    <%= form.number_field :likes_count %>
+  </div>
+
+  <div>
+    <%= form.label :reposts_count, style: "display: block" %>
+    <%= form.number_field :reposts_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
