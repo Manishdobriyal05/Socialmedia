@@ -17,8 +17,8 @@
   </div>
 
   <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.file_field :images, accept: 'image/png, image/gif, image/jpeg' %> 
+    <%= form.label :images, style: "display: block" %>
+    <%= form.file_field :images, multiple: true %> 
     <%#= form.text_area :content, placeholder: "Enter article content here", size: "50x10" %>
   </div>
 
@@ -27,15 +27,15 @@
     <%= form.text_area :body, placeholder: "Enter the message", class: "Form-control", rows: 3 %>
   </div>
 
-  <div>
-    <%= form.label :likes_count, style: "display: block" %>
-    <%= form.number_field :likes_count %>
+ <!--  <div>
+    <%#= form.label :likes_count, style: "display: block" %>
+    <%#= form.number_field :likes_count %>
   </div>
 
   <div>
-    <%= form.label :reposts_count, style: "display: block" %>
-    <%= form.number_field :reposts_count %>
-  </div>
+    <%#= form.label :reposts_count, style: "display: block" %>
+    <%#= form.number_field :reposts_count %>
+  </div> -->
 
   <div class="actions">
     <%= form.submit class: "btn btn-primary" %>

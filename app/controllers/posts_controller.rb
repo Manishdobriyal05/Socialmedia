@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   
   def create
     # Post.create(post_params)
+    
     @post = Post.new(post_params)
     @post.user_id = current_user.id     # current_user_id is Associated with post id 
     # current_user.posts.create(post_params)
@@ -57,6 +58,6 @@ class PostsController < ApplicationController
   private
    
   def post_params
-    params.require(:post).permit(:username, :body, :images)
+    params.require(:post).permit(:username, :body, images: [])
   end
 end

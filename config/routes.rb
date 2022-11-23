@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
   # resources :users, only: [:new, :create]
   resources :users
-  root "users#new"
-  # delete "sessions", to: "sessions#destroy"
+  # root "users#new"
+  
  
   resources :sessions, only: [:new, :create, :login, :welcome, :destroy]
+  root "sessions#new"
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
