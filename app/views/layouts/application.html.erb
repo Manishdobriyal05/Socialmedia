@@ -10,8 +10,19 @@
     <%= javascript_importmap_tags %>
     <style type="text/css">
       .center {
-        margin-left: auto;
-        margin-right: auto;
+        color: blue;
+        text-align: center;
+        font-size: 48px;
+        font-family: "Times New Roman";
+        text-decoration: underline
+
+      }
+      .center2 {
+        color: black;
+        text-align: center;
+        font-size: 30px;
+        font-family: "Times New Roman";
+        text-decoration: underline
 
       }
        th, td {
@@ -26,12 +37,28 @@
       }
       .left{
         text-align: left;
+        position: absolute;
+        top: 10px;
+        left: 19px;
       }
-      
+      body {
+        background-color: lightblue;
+      } 
+      .corner {
+        text-align: right;
+        position: absolute;
+        top: 10px;
+        right: 19px;
+      }
+      .login{
+        text-align: center;
+      }
+
+
     </style>
   </head>
 
-  <body align="center">
+  <body align="center" >
     <%= yield %>
   </body>
 </html>

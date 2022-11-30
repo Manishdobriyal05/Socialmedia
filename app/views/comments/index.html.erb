@@ -1,0 +1,23 @@
+<div class="center2">Comments List</div>
+<div class="comments">
+  <% @comments.each do |comment| %>
+    <div class="comment">
+        <strong><u>Comment by</u></strong>
+        <span><%= comment.commenter %> -</span>
+        <span><%= comment.commentbox %> -</span>
+        <em>on- <%= comment.created_at %></em>
+        <%= link_to 'Delete', post_comments_path(comment.post, comment), method: :delete, data: { turbo_method: :delete,
+                     turbo_confirm: 'Are you sure?'}, class: "mt-2 btn btn-primary" %>
+        <%#= link_to "Delete comment", @comment, turbo_method: :delete %>
+        <%#= link_to 'Delete', post_comment_path(@comment.post, @comment),method: :delete,
+                              data: { confirm: "Are you sure ?"} %>
+        <%#= link_to 'delete',{ controller: "comments", action: "destroy", id: user.id }, data: { confirm: 'Are you are?' }, method: :delete %>
+    </div>
+    <hr />
+  <% end %>
+</div>
+<br>
+<div class="corner">
+  <%= link_to "Back to posts", posts_path, class: "mt-2 btn btn-primary" %>
+</div>
+

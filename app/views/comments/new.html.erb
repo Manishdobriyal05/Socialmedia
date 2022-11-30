@@ -1,0 +1,13 @@
+<h1>Add a Comment</h1>
+<h2>Comments</h2>
+<%= render @post.comments %>
+<%= link_to "Delete comment", post_comments_path %>
+<br>
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<br>
+<div>
+  <%= link_to "Back to posts", posts_path %>
+</div>
+
+

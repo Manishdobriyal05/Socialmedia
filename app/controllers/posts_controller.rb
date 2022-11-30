@@ -9,17 +9,16 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    # @comment = Comment.find(params[:post_id])
   end
 
 
   def new
     @post = Post.new
   end
-  
-  
+    
   def create
     # Post.create(post_params)
-    
     @post = Post.new(post_params)
     @post.user_id = current_user.id     # current_user_id is Associated with post id 
     # current_user.posts.create(post_params)
@@ -28,7 +27,6 @@ class PostsController < ApplicationController
       # redirect_to @post
     else
       render :new
-
     end
   end
 
@@ -38,19 +36,16 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
     if @post.update(post_params)
       redirect_to @post
     else
       render :edit, status: :unprocessable_entity
     end
-
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
     redirect_to posts_path, status: :see_other
   end
 

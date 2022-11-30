@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
+  resources :follows, only: [:create, :destroy]
 
   #resources :posts, only: [:index, :new, :create, :edit, :update]
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   # root "posts#index"
 
   # resources :users, only: [:new, :create]
   resources :users
-  # root "users#new"
+  post '/users/:id/follow', to: "users#follow", as: "follow_user"
+  post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
   
  
   resources :sessions, only: [:new, :create, :login, :welcome, :destroy]
@@ -18,5 +22,7 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
 
 end
+
+
 
 
